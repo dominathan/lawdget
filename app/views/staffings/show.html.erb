@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @staffing.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @staffing.last_name %>
+</p>
+
+<p>
+  <strong>Middle name:</strong>
+  <%= @staffing.middle_name %>
+</p>
+
+<p>
+  <strong>Cost per hour:</strong>
+  <%= @staffing.cost_per_hour %>
+</p>
+
+<p>
+  <strong>Lawfirm:</strong>
+  <%= @staffing.lawfirm %>
+</p>
+
+<p>
+  <strong>Matter:</strong>
+  <%= @staffing.matter %>
+</p>
+
+<%= link_to 'Edit', edit_staffing_path(@staffing) %> |
+<%= link_to 'Back', staffings_path %>

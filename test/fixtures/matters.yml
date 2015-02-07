@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fixed_fee: 1
+  cost: 1
+  expect_hours: 1
+  lawfirm_id: 
+
+two:
+  fixed_fee: 1
+  cost: 1
+  expect_hours: 1
+  lawfirm_id: 

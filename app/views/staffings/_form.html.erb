@@ -1,0 +1,41 @@
+<%= form_for(@staffing) do |f| %>
+  <% if @staffing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@staffing.errors.count, "error") %> prohibited this staffing from being saved:</h2>
+
+      <ul>
+      <% @staffing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_per_hour %><br>
+    <%= f.number_field :cost_per_hour %>
+  </div>
+  <div class="field">
+    <%= f.label :lawfirm_id %><br>
+    <%= f.text_field :lawfirm_id %>
+  </div>
+  <div class="field">
+    <%= f.label :matter_id %><br>
+    <%= f.text_field :matter_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

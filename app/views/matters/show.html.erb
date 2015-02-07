@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fixed fee:</strong>
+  <%= @matter.fixed_fee %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @matter.cost %>
+</p>
+
+<p>
+  <strong>Expect hours:</strong>
+  <%= @matter.expect_hours %>
+</p>
+
+<p>
+  <strong>Lawfirm:</strong>
+  <%= @matter.lawfirm %>
+</p>
+
+<%= link_to 'Edit', edit_matter_path(@matter) %> |
+<%= link_to 'Back', matters_path %>

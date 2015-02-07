@@ -1,0 +1,33 @@
+<%= form_for(@matter) do |f| %>
+  <% if @matter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matter.errors.count, "error") %> prohibited this matter from being saved:</h2>
+
+      <ul>
+      <% @matter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fixed_fee %><br>
+    <%= f.number_field :fixed_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.number_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :expect_hours %><br>
+    <%= f.number_field :expect_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :lawfirm_id %><br>
+    <%= f.text_field :lawfirm_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
