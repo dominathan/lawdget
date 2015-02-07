@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require highcharts
+//= require highcharts/modules/exporting
 //= require jquery_ujs
 //= require_tree .

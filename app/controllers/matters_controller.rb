@@ -1,5 +1,6 @@
 class MattersController < ApplicationController
   before_action :set_matter, only: [:show, :edit, :update, :destroy]
+  before_action :set_staffing, only: [:new]
 
   # GET /matters
   # GET /matters.json
@@ -70,5 +71,9 @@ class MattersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def matter_params
       params.require(:matter).permit(:fixed_fee, :cost, :expect_hours, :lawfirm_id)
+    end
+
+    def set_staffing
+      @staffings = Staffing.order(:last_name)
     end
 end
