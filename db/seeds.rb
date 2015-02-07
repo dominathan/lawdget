@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do |n|
+  Staffing.create!(first_name: Faker::Name.first_name, middle_name: Faker::Name.first_name,
+                    last_name: Faker::Name.last_name, cost_per_hour: rand(5.0..10.0)*10)
+end

@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :middle_name %><br>
-    <%= f.text_field :middle_name %>
+    <%= f.text_field :middle_name, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :cost_per_hour %><br>
-    <%= f.number_field :cost_per_hour %>
+    <%= f.number_field :cost_per_hour, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :lawfirm_id %><br>
-    <%= f.text_field :lawfirm_id %>
+    <%= f.text_field :lawfirm_id, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :matter_id %><br>
-    <%= f.text_field :matter_id %>
+    <%= f.text_field :matter_id, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-md btn-primary" %>
   </div>
 <% end %>
