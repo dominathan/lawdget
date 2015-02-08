@@ -64,16 +64,33 @@
     });
   }
 
+  function staffName() {
+    var name = $("#staffSelect option:selected").text();
+    return name
+  }
+
+  function totalCost() {
     $("#testHours").on('change', function() {
       var expectedHours = parseInt($(this).val());
       var cost = parseInt($("#costPerHour").text());
-      console.log("expectedHours:  "+expectedHours);
-      console.log("cost: "+ cost)
-      console.log("output:  "+expectedHours * cost);
-      return cost * expectedHours
+      return cost * expectedHours;
     });
+  }
 
   costPerHour();
+  totalCost();
+
+  var chartData = function() {
+    var cost = parseInt($("#testHours").val());
+    var expectedHours = parseInt($("#staffSelect").val());
+    return cost * expectedHours;
+  }
+
+  function testJson() {
+    return JSON.stringify(
+      {"name": staffName(), "data": chartData()}
+    );
+  }
 
   // function outPut() {
   //   $("#testHours").on('change',function() {
