@@ -8,11 +8,77 @@
 
   </div>
   <div class="col-lg-8">
-    <h2>StaffShit</h2>
+    <h2 class>Add Staff</h2>
+    <div class="row">
+      <div class="col-lg-4">
+        <h4>Name</h4>
+      </div>
+
+      <div class="col-lg-4">
+        <h4>Cost per Hour</h4>
+      </div>
+
+      <div class="col-lg-4">
+        <h4>Expected Hours</h4>
+      </div><br><br>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <%= select_tag "Staff", options_for_select(@staffings.collect { |stf| ["#{stf.last_name} #{stf.middle_name[0]}. , #{stf.first_name}", stf.cost_per_hour]}), id: "staffSelect" %>
+      </div>
+      <div class="col-lg-4">
+        <span id="costPerHour"></span>
+      </div>
+      <div class="col-lg-4">
+         <input id='testHours' type='hours' class='matter-hours form-control' placeholder="Expected Hours">
+      </div>
+    </div>
+    <br>
+    <br>
+    <% @staffings.each do |staffing| %>
+<!--       <div class="row">
+        <div class="col-lg-4">
+          <%= "#{staffing.last_name} #{staffing.middle_name[0]}.  , #{staffing.first_name}" %>
+        </div>
+        <div class="col-lg-4">
+          $<%= staffing.cost_per_hour %>
+        </div>
+        <div class="col-lg-4">
+          <input id='<%="staff#{staffing.id}"%>' type='hours' class='matter-hours form-control' placeholder="Expected Hours">
+        </div>
+         <br>
+      </div> -->
+    <% end %>
+
   </div>
 </div>
 
 <script type="text/javascript">
 
+
+  function costPerHour () {
+    $("#staffSelect").on('change', function() {
+       var staffCostPerHour = parseInt(($(this).val()));
+       $('#costPerHour').text(staffCostPerHour)
+    });
+  }
+
+    $("#testHours").on('change', function() {
+      var expectedHours = parseInt($(this).val());
+      var cost = parseInt($("#costPerHour").text());
+      console.log("expectedHours:  "+expectedHours);
+      console.log("cost: "+ cost)
+      console.log("output:  "+expectedHours * cost);
+      return cost * expectedHours
+    });
+
+  costPerHour();
+
+  // function outPut() {
+  //   $("#testHours").on('change',function() {
+  //     parseInt($("#costPerHour").val()) * parseInt($("#testHours").val());
+  //   });
+  // };
 
 </script>
